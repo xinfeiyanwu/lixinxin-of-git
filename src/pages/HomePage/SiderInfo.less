@@ -1,0 +1,49 @@
+@import '~antd/lib/style/themes/default.less';
+@import '~@/utils/utils.less';
+
+ul,p{
+    padding: 0;
+    margin: 0;
+}
+
+.updateInfo{
+    font-size: 14px;
+    margin-left: 10px;
+    :global{
+        .updateNav{
+            background: #fff;
+            .ant-col-12{
+                text-align: center;
+                border: 1px solid #ccc;
+                height: 38px;
+                padding: 0 4px;
+                line-height: 38px;
+                cursor: "pointer";
+            }
+            .marginLeft{
+                margin-left: -1px;
+            }
+            .active{
+                background: #31c17b;
+            }
+        }
+        .InfoCont{
+            background: #fff;
+            padding: 10px;
+        }
+        .helpBox{
+            margin-top: 40px;
+            background: #fff;
+            height:500px;
+            .helpInfo{
+                .contact{
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .ant-avatar{
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}

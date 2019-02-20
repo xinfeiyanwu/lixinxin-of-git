@@ -1,0 +1,122 @@
+@import '~antd/lib/style/themes/default.less';
+@import '~@/utils/utils.less';
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+//变量
+@h_hight: 54px;
+@spanTime_h: 30px;
+@spanTimePad: (@h_hight - @spanTime_h)/2;
+
+.header{
+    background: #fff;
+    padding: 0 30px 0 20px;
+    line-height: 54px;
+    height: @h_hight;
+}
+
+.headerInfo{
+    margin: 12px 0;
+    background: linear-gradient(145deg, rgba(102, 255, 0, 0.514), rgb(0, 255, 234));
+    height: 80px;
+    padding: 20px 0 0 10px;
+    border-radius: 5px;
+    .key{
+        font-weight: 500;
+        color: #fff;
+    }
+    .num{
+        font-size: 20px;
+        font-weight: 700;
+        text-indent: 10px;
+    }
+}
+
+//使用less混合函数去写出一个active类
+//在原有的active上稍加左中右的不同样式
+.spanTimeFn(){
+    margin: @spanTimePad 0;
+    height: @spanTime_h;
+    line-height: @spanTime_h;
+    text-align: center;
+    cursor: pointer;
+    background: #f5f5f5;
+    border: 1px solid transparent ;
+}
+.spanTime{
+    .spanTimeFn();
+}
+.spanTimeL{
+    border-radius: 3px 0 0 3px;
+}
+.spanTimeR{
+    border-radius: 0 3px 3px 0;
+}
+.active{
+    background: #fff;
+    border: 1px solid green;
+}
+
+.contSetting{
+    text-align: center;
+    height: @h_hight;
+    line-height: @h_hight;
+    cursor: pointer;
+}
+
+.homePageLay{
+    :global{
+        .ant-layout-sider{
+            background: none;
+        }
+    }
+}
+
+.setBoxFn(){
+    position: relative;  
+    margin: 0 20px;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #f5f5f5;
+}
+.leftLabelFn() {
+    position: absolute;
+    top: 7px;
+    height: 30px;
+    width: 63px;
+    right: 10px;
+    line-height: 30px;
+    border-radius: 6px;
+    vertical-align: middle;
+    text-align: center;
+    border: none;
+}
+.moduleSet{
+    .setBox{
+        >li{
+            .setBoxFn();
+            .removeBtn{
+                .leftLabelFn();
+                padding: 0 10px;
+                background: rgb(153, 153, 153);
+                color: #fff;
+                cursor: pointer;
+            }
+            .default{
+                .leftLabelFn();
+                background: #fff;
+                color: #000;
+                cursor: auto;
+            }
+        }
+    }
+}
+:global{
+    .ant-modal-body{
+        padding: 0 24px;
+    }
+}
+
